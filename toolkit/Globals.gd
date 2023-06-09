@@ -1,6 +1,8 @@
 extends Node
 
-var GlobalData = { "SupportsDoubleJump" : false }
+# For custom global data
+
+var GlobalData = { "WhateverProperty" : false }
 
 func supports(key : String):
 	if GlobalData.has(key):

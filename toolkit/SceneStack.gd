@@ -4,7 +4,7 @@ var _stack = []
 
 enum StackOptions { none, push }
 
-# Not sure if these actually run if not in the scene tree; actually pretty sure they don't.
+# Not sure if these actually run if not in the scene tree; actually pretty sure they don't. Still worth it.
 const StoppableFunctions = ["set_process_unhandled_input", "set_process_input", "set_process_unhandled_key_input", "set_physics_process", "set_process"]
 
 # But this may be able to help with signal issues

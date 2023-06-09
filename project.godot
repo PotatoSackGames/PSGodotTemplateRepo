@@ -14,6 +14,18 @@ config/name="TemplateProject"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Debug="*res://toolkit/Debug.tscn"
+GameStateManager="*res://toolkit/GameStateManager.gd"
+Globals="*res://toolkit/Globals.gd"
+SaverLoader="*res://toolkit/SaverLoader.gd"
+SceneChanger="*res://toolkit/SceneChanger.gd"
+SceneStack="*res://toolkit/SceneStack.tscn"
+Transition="*res://toolkit/Transition.tscn"
+Music="*res://toolkit/Music.tscn"
+Events="*res://toolkit/Events.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
