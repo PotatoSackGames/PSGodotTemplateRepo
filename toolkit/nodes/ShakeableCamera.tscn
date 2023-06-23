@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx5o4j1oexylu"]
+
+[ext_resource type="Script" path="res://toolkit/nodes/ShakeableCamera.gd" id="1"]
+
+[node name="ShakeableCamera" type="Camera2D"]
+script = ExtResource("1")

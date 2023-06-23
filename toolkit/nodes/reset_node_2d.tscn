@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://djmb2ww248dr3"]
+
+[ext_resource type="Script" path="res://toolkit/nodes/reset_node_2d.gd" id="1_opbsy"]
+
+[node name="ResetNode2D" type="VisibleOnScreenNotifier2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_opbsy")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://b05470nqf08xr"]
+
+[ext_resource type="PackedScene" uid="uid://cslf2dcd385y1" path="res://toolkit/debug/DebugLabel.tscn" id="1_8ietw"]
+[ext_resource type="Texture2D" uid="uid://bmnnrpo5lsdne" path="res://toolkit/debug/info_box_ninepatch.png" id="2_cbjdg"]
+[ext_resource type="Script" path="res://toolkit/debug/info_label.gd" id="2_qekxu"]
+
+[node name="InfoLabel" instance=ExtResource("1_8ietw")]
+texture = ExtResource("2_cbjdg")
+script = ExtResource("2_qekxu")

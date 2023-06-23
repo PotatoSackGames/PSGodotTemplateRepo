@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmbkf1dpjv22i"]
+
+[ext_resource type="Script" path="res://toolkit/singletons/Music.gd" id="1_vag15"]
+
+[node name="Music" type="Node"]
+script = ExtResource("1_vag15")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true

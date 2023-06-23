@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://beq0o1bgw4toj"]
+
+[ext_resource type="PackedScene" uid="uid://gxq6xo6ti177" path="res://toolkit/nodes/effect.tscn" id="1_joihi"]
+[ext_resource type="Script" path="res://toolkit/nodes/effects/serial_effect.gd" id="2_k2mv1"]
+
+[node name="SerialEffect" instance=ExtResource("1_joihi")]
+script = ExtResource("2_k2mv1")

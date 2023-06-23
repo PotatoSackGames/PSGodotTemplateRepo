@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctj4q248nmbu1"]
+
+[ext_resource type="PackedScene" uid="uid://gxq6xo6ti177" path="res://toolkit/nodes/effect.tscn" id="1_wlw2c"]
+[ext_resource type="Script" path="res://toolkit/nodes/effects/stretch.gd" id="2_s8vxc"]
+
+[node name="Stretch" instance=ExtResource("1_wlw2c")]
+script = ExtResource("2_s8vxc")

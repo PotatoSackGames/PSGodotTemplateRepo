@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dplmxyggw407"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_n238o"]
+[ext_resource type="Texture2D" uid="uid://k3rtu0q8oe06" path="res://test_sprite.png" id="2_15fkj"]
+
+[node name="TestEffects" type="Node2D"]
+script = ExtResource("1_n238o")
+
+[node name="Squash" type="Sprite2D" parent="."]
+position = Vector2(-41, 0)
+texture = ExtResource("2_15fkj")
+
+[node name="Stretch" type="Sprite2D" parent="."]
+texture = ExtResource("2_15fkj")
+
+[node name="SquashThenStretch" type="Sprite2D" parent="."]
+position = Vector2(41, 0)
+texture = ExtResource("2_15fkj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ParticlesTest" type="Node2D" parent="."]
+position = Vector2(43, -55)

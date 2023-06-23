@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyr1ti76t3mtg"]
+
+[ext_resource type="Script" path="res://toolkit/nodes/level_base.gd" id="1_4pxri"]
+
+[node name="LevelBase" type="Node"]
+script = ExtResource("1_4pxri")

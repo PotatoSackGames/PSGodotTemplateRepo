@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgt6b8ux1l2hv"]
+
+[ext_resource type="PackedScene" uid="uid://gxq6xo6ti177" path="res://toolkit/nodes/effect.tscn" id="1_y6jjk"]
+[ext_resource type="Script" path="res://toolkit/nodes/effects/squash.gd" id="2_a7e0d"]
+
+[node name="Squash" instance=ExtResource("1_y6jjk")]
+script = ExtResource("2_a7e0d")
