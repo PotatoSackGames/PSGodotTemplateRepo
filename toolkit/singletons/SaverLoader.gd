@@ -5,7 +5,9 @@ extends Node
 # work
 
 
-# Purely to cache the files that have been loaded already.
+# Purely to cache the files that have been loaded already. Note: reload_data will attempt to reload the file
+# that already exists; this makes it so you can save stuff at any point and then update it so that you always
+# have the most recent data, regardless of whether or not it's cached
 var Data = {}
 
 const FilePrefix = "user://data/"

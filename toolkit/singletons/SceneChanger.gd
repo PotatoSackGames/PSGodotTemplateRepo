@@ -1,7 +1,8 @@
 # Changes scenes. Used with Transition singleton to ensure that you transition out and in any time it's called.
+# This can be easily commented out if you want to do your own transitions.
 extends Node
 
-# Call this if you want to change scenes
+# Call this if you want to change scenes to a file at scene_path
 func change_scene_to(scene_path : String, stack_option = SceneStack.StackOptions.none):
 	await Transition.transition_out()
 	SceneStack.show_scene(scene_path, stack_option)

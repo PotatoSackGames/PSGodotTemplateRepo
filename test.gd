@@ -11,7 +11,7 @@ func _ready() -> void:
 	var effect_times : Array[float] = [.2, .2]
 	await try_multiple_effects(effects, effect_times, $SquashThenStretch)
 	await try_effect(preload("res://toolkit/nodes/effects/explosion.tscn"), $ParticlesTest, 1.0)
-	await get_tree().create_timer(5.0).timeout
+#	await get_tree().create_timer(5.0).timeout
 #	await Music.change_music(Music.EDMStream, 3.0)
 #	await Music.change_music(Music.EDMStream, 3.0)
 #	Music.change_music_immediate(Music.EDMStream)

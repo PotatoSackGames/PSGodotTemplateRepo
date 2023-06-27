@@ -1,5 +1,10 @@
 extends Node
 
+# Use thse functions to add special effects to your game that go away after a period of time;
+# this ensures that you won't have to create a bunch of custom timers for your temporary special effects.
+# Note that the in_time variable and in_times below require it be somewhere around close to the total
+# time of your special effect, or the individual times of each special effect (in the multi-effect case).
+
 static func add_temporary_effect_to(effect_scene, in_time : float, node) -> Effect:
 	var effect = effect_scene.instantiate()
 	var detachable = Detachable.new()
@@ -10,6 +15,9 @@ static func add_temporary_effect_to(effect_scene, in_time : float, node) -> Effe
 	effect.start_effect(node)
 	return effect
 
+
+# A multi-effect adds a set of effects that act in series, each one after in_time amount of time.
+# Similar can be added to achieve a parallel set of effects if desired.
 static func add_temporary_multi_effect_to(effect_scenes : Array[PackedScene], in_times : Array[float], node) -> void:
 	var detachable = Detachable.new()
 	var serial_effect = preload("res://toolkit/nodes/effects/serial_effect.tscn").instantiate()

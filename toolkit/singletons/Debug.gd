@@ -2,6 +2,10 @@ extends CanvasLayer
 
 var _error_dictionary = {}
 
+# Use info and error in this global script to output info or error text to the UI;
+# If you add a toggle_debug input to your input map, you can turn it on and it'll automatically
+# show you what's been logged previously. Use this to help debug things when in release mode. 
+
 func info(text : String, catch_once : bool = true) -> void:
 	if catch_once:
 		if not _error_dictionary.has(text):

@@ -1,5 +1,9 @@
 extends CanvasLayer
 
+# Used automatically to transition between scenes. Note you can customize this and add a shader to
+# the contained ColorRect to achieve some cool effects. Note also you can await the functions
+# in case you feel like you need to wait until something is done.
+
 @onready var _anim = $AnimationPlayer
 
 
