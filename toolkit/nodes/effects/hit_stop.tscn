@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqr8xumbvyxga"]
+
+[ext_resource type="PackedScene" uid="uid://gxq6xo6ti177" path="res://toolkit/nodes/effect.tscn" id="1_6jgli"]
+[ext_resource type="Script" path="res://toolkit/nodes/effects/hit_stop.gd" id="2_gif8o"]
+[ext_resource type="Texture2D" uid="uid://cxc3sgstyapt2" path="res://test_hit_stop_sprite.png" id="3_volgw"]
+
+[node name="HitStop" instance=ExtResource("1_6jgli")]
+script = ExtResource("2_gif8o")
+HitStopTexture = ExtResource("3_volgw")
+TimeInHitStop = 0.5
