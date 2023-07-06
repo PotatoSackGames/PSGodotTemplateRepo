@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbxmp8xn6api3"]
+
+[ext_resource type="PackedScene" uid="uid://g4l1kj51d84e" path="res://toolkit/nodes/effects/shader_swap.tscn" id="1_1tiac"]
+[ext_resource type="Material" uid="uid://dx6ai671ma33q" path="res://toolkit/nodes/effects/damage_shader_mat.tres" id="2_u67id"]
+[ext_resource type="Script" path="res://toolkit/nodes/effects/damage.gd" id="3_ugwcp"]
+
+[node name="Damage" instance=ExtResource("1_1tiac")]
+script = ExtResource("3_ugwcp")
+ShaderMat = ExtResource("2_u67id")

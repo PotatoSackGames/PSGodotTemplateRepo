@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqc0w72usnwdj"]
+
+[ext_resource type="Texture2D" uid="uid://dno3m0dh7h8mu" path="res://toolkit/nodes/effects/round_hit.png" id="1_weu8d"]
+
+[node name="round_hit_image" type="Sprite2D"]
+texture = ExtResource("1_weu8d")

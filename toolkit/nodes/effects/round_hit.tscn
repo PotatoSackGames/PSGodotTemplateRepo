@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6kg416xx3kd7"]
+
+[ext_resource type="PackedScene" uid="uid://gxq6xo6ti177" path="res://toolkit/nodes/effect.tscn" id="1_t5lum"]
+[ext_resource type="Script" path="res://toolkit/nodes/effects/round_hit.gd" id="2_no6kd"]
+
+[node name="RoundHit" instance=ExtResource("1_t5lum")]
+script = ExtResource("2_no6kd")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://g4l1kj51d84e"]
+
+[ext_resource type="PackedScene" uid="uid://gxq6xo6ti177" path="res://toolkit/nodes/effect.tscn" id="1_8qmvx"]
+[ext_resource type="Script" path="res://toolkit/nodes/effects/shader_swap.gd" id="3_ksyut"]
+
+[node name="ShaderSwap" instance=ExtResource("1_8qmvx")]
+script = ExtResource("3_ksyut")
+ShaderMat = null

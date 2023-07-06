@@ -17,6 +17,22 @@ texture = ExtResource("2_15fkj")
 position = Vector2(41, 0)
 texture = ExtResource("2_15fkj")
 
+[node name="DamageEffect" type="Sprite2D" parent="."]
+position = Vector2(82, 0)
+texture = ExtResource("2_15fkj")
+
+[node name="RoundHit" type="Sprite2D" parent="."]
+position = Vector2(-41, 38)
+texture = ExtResource("2_15fkj")
+
+[node name="DamageCombo" type="Sprite2D" parent="."]
+position = Vector2(-1, 38)
+texture = ExtResource("2_15fkj")
+
+[node name="HitStop" type="Sprite2D" parent="."]
+position = Vector2(41, 38)
+texture = ExtResource("2_15fkj")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ParticlesTest" type="Node2D" parent="."]
