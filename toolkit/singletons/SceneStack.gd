@@ -15,7 +15,7 @@ const ReverseStoppableFunctions = ["set_block_signals"]
 
 func show_scene(scene_path : String, stack_option = StackOptions.none):
 	if stack_option == StackOptions.push:
-		var next_scene = load(scene_path).instance()
+		var next_scene = load(scene_path).instantiate()
 
 		var current_scene = get_tree().current_scene
 		_stack.push_back(current_scene)
