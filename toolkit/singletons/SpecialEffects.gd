@@ -1,6 +1,6 @@
 extends Node
 
-# Use thse functions to add special effects to your game that go away after a period of time;
+# Use these functions to add special effects to your game that go away after a period of time;
 # this ensures that you won't have to create a bunch of custom timers for your temporary special effects.
 # Note that the in_time variable and in_times below require it be somewhere around close to the total
 # time of your special effect, or the individual times of each special effect (in the multi-effect case).
@@ -30,4 +30,18 @@ static func add_temporary_multi_effect_to(effect_scenes : Array[PackedScene], in
 	node.add_child(detachable)
 	detachable.TimeToComplete = total_time
 	serial_effect.start_effect(node)
+	
+
+# A multi-effect adds a set of effects that act in parallel, finishing after the time has elapsed.
+static func add_temporary_parallel_multi_effect_to(effect_scenes : Array[PackedScene], in_time, node) -> void:
+	var detachable = Detachable.new()
+	var parallel_effect = preload("res://toolkit/nodes/effects/parallel_effect.tscn").instantiate()
+	
+	for i in effect_scenes.size():
+		parallel_effect.add_effect(effect_scenes[i])
+	
+	detachable.add_child(parallel_effect)
+	node.add_child(detachable)
+	detachable.TimeToComplete = in_time
+	parallel_effect.start_effect(node)
 	
