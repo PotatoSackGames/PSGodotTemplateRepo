@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://uhreno81l6ho"]
+
+[ext_resource type="PackedScene" uid="uid://gxq6xo6ti177" path="res://toolkit/nodes/effect.tscn" id="1_b8cuk"]
+[ext_resource type="Script" path="res://toolkit/nodes/effects/shake.gd" id="2_eimlv"]
+
+[node name="Shake" instance=ExtResource("1_b8cuk")]
+script = ExtResource("2_eimlv")
