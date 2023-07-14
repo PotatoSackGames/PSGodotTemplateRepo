@@ -7,4 +7,6 @@
 [node name="HitStop" instance=ExtResource("1_6jgli")]
 script = ExtResource("2_gif8o")
 HitStopTexture = ExtResource("3_volgw")
-TimeInHitStop = 0.5
+TimeInHitStop = 0.7
+IsFramebased = false
+FrameNumber = 0
