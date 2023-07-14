@@ -15,9 +15,8 @@ func _ready() -> void:
 	await try_effect(preload("res://toolkit/nodes/effects/round_hit.tscn"), $RoundHit, .60)
 	
 	effects = [preload("res://toolkit/nodes/effects/round_hit.tscn"), preload("res://toolkit/nodes/effects/explosion.tscn"), preload("res://toolkit/nodes/effects/damage.tscn")]
-	effect_times = [.6, 1.0, .5]
-	await try_multiple_effects(effects, effect_times, $DamageCombo)
-	await try_effect(preload("res://toolkit/nodes/effects/hit_stop.tscn"), $HitStop, .55)
+	await try_multiple_parallel_effects(effects, 1.0, $DamageCombo)
+	await try_effect(preload("res://toolkit/nodes/effects/hit_stop.tscn"), $HitStop, .71)
 #	await get_tree().create_timer(5.0).timeout
 #	await Music.change_music(Music.EDMStream, 3.0)
 #	await Music.change_music(Music.EDMStream, 3.0)
@@ -31,3 +30,7 @@ func try_multiple_effects(effect_scenes : Array[PackedScene], effect_times : Arr
 func try_effect(effect_scene, node, with_time = .2) -> void:
 	SpecialEffects.add_temporary_effect_to(effect_scene, with_time, node)
 	await get_tree().create_timer(0.4).timeout
+
+func try_multiple_parallel_effects(effect_scenes : Array[PackedScene], max_time : float, node) -> void:
+	SpecialEffects.add_temporary_parallel_multi_effect_to(effect_scenes, max_time, node)
+	await get_tree().create_timer(max_time + .1).timeout
