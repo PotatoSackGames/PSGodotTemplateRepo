@@ -2,32 +2,23 @@
 extends Node
 
 # Hold onto game state; this can be loaded with SaverLoader, and can be manipulated
-# with set_item_state(property_name, property_value). Retrieve it if you wish by simply using GSM.property_name.
+# as if it has any property you want to use. You can just call GSM.Thing1 = "blah", and you can
+# then use GSM.Thing1 later. You don't have to declare Thing1 on this class for that to function.
 
-# This absolutely hijacks the Godot property system and makes it so whenever you set the game state with
-# GameStateManager.set_item_state(property_name, property_value), you can then just call GSM.property_name and it'll return the value to you.
-# Mind that if you do not set the value first, it will throw an error!
+# Note that the getter will actually throw an error, intentionally, if the property does not 
+# exist when you go to get it.
 
-# Note I have not solved how to make this work with a setting just yet due to some internal safety checks that Godot has.
+# Thanks to @assertchris on Mastodon for implementing the setter method, and simplifying the getter.
 
-var _game_state : Array[Dictionary]
-
-func _enter_tree():
-	_game_state = get_property_list()
+var _game_state : Dictionary = {}
 	
 func _get(property):
-	for item in _game_state:
-		if item.name == property:
-			if item.has("value"):
-				return item.value
-			else:
-				return item
-	
+	if _game_state.has(property):	
+		return _game_state[property]
+
 	assert(false, "Property " + property + " has not had set_item_state called on it initially")
 	return null
 	
-func set_item_state(item_id : String, state : Variant):
-	_game_state.append({"name": item_id, "type": typeof(state), "value": state })
-
-func has_item_state(item_id):
-	return _game_state.has(item_id)
+func _set(property, value):
+	_game_state[property] = value
+	return true
