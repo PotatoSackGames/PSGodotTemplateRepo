@@ -3,5 +3,6 @@
 [ext_resource type="Shader" path="res://toolkit/nodes/effects/damage.gdshader" id="1_cqkk8"]
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource("1_cqkk8")
 shader_parameter/active = false
