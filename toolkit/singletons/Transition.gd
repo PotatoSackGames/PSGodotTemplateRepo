@@ -5,7 +5,7 @@ extends CanvasLayer
 # in case you feel like you need to wait until something is done.
 
 @onready var _anim = $AnimationPlayer
-
+@onready var _crt = $CRTFilter
 
 # Call this to fade out the current scene
 # Called automatically from the scene changer
@@ -18,3 +18,10 @@ func transition_out() -> void:
 func transition_in() -> void:
 	_anim.play("Start")
 	await _anim.animation_finished
+
+
+func turn_off_crt():
+	_crt.hide()
+	
+func turn_on_crt():
+	_crt.show()
