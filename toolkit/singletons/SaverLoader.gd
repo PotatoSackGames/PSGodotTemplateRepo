@@ -27,7 +27,7 @@ func get_data(file_name):
 	if Data.has(file_name):
 		return Data[file_name]
 	else:
-		if not file_exists(FilePrefix + file_name + FileSuffix):
+		if not file_exists(file_name):
 			return null
 
 		return reload_data(file_name)
