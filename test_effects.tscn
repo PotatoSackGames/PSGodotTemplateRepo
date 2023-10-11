@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dplmxyggw407"]
+[gd_scene load_steps=5 format=3 uid="uid://dplmxyggw407"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_n238o"]
 [ext_resource type="Texture2D" uid="uid://k3rtu0q8oe06" path="res://test_sprite.png" id="2_15fkj"]
+[ext_resource type="PackedScene" uid="uid://rxuleixvd3ab" path="res://toolkit/nodes/ui/mouseover_control_sfx.tscn" id="3_f7ynm"]
+[ext_resource type="AudioStream" uid="uid://b8w1ia8oenck1" path="res://rollover2.wav" id="4_ym2kw"]
 
 [node name="TestEffects" type="Node2D"]
 script = ExtResource("1_n238o")
@@ -37,3 +39,35 @@ texture = ExtResource("2_15fkj")
 
 [node name="ParticlesTest" type="Node2D" parent="."]
 position = Vector2(43, -55)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Root" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RunEffects" type="Button" parent="CanvasLayer/Root"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -36.0
+offset_right = -4.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Run Effects"
+
+[node name="MouseoverControlSfx" parent="CanvasLayer/Root/RunEffects" node_paths=PackedStringArray("Target") instance=ExtResource("3_f7ynm")]
+SfxStream = ExtResource("4_ym2kw")
+Target = NodePath("..")
+
+[connection signal="pressed" from="CanvasLayer/Root/RunEffects" to="." method="_on_run_effects_pressed"]

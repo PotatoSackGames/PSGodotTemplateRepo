@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://rxuleixvd3ab"]
+
+[ext_resource type="Script" path="res://toolkit/nodes/ui/mouseover_control_sfx.gd" id="1_0yjy5"]
+
+[node name="MouseoverControlSfx" type="AudioStreamPlayer"]
+bus = &"Sfx"
+script = ExtResource("1_0yjy5")
