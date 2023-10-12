@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckcg5cfdkhy01"]
+
+[ext_resource type="Script" path="res://toolkit/nodes/state_chart/state_chart.gd" id="1_3rb41"]
+
+[node name="StateChart" type="Node"]
+script = ExtResource("1_3rb41")

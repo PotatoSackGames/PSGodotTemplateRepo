@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr1yehnhwjja3"]
+
+[ext_resource type="PackedScene" uid="uid://jf6fjqqfa6wm" path="res://toolkit/nodes/state_chart/state_transition.tscn" id="1_0ix82"]
+[ext_resource type="Script" path="res://toolkit/nodes/state_chart/take_first_composite_state_transition.gd" id="2_0rlx4"]
+
+[node name="TakeFirstStateTransition" instance=ExtResource("1_0ix82")]
+script = ExtResource("2_0rlx4")

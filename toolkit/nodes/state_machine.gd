@@ -8,7 +8,7 @@ class_name StateMachine
 class PDA:
 	var stack = []
 
-	func push(state : State):
+	func push(state : PDAState):
 		if stack.size() > 0:
 			stack[-1].exit(state)
 		stack.append(state)
@@ -23,12 +23,12 @@ class PDA:
 			stack.back().enter(prev_state)
 		return prev_state
 
-	func pop_and_push(state : State):
+	func pop_and_push(state : PDAState):
 		pop()
 		push(state)
 
 
-class State:
+class PDAState:
 	var _character # Reference to character
 	
 	var Gravity = ProjectSettings.get("physics/2d/default_gravity") # most states can or will need to reference this
@@ -36,10 +36,10 @@ class State:
 	func _init(character):
 		_character = character
 
-	func enter(previous_state : State):
+	func enter(previous_state : PDAState):
 		pass
 
-	func exit(next_state : State):
+	func exit(next_state : PDAState):
 		pass
 
 	func physics_process(delta : float):
@@ -51,7 +51,7 @@ class State:
 
 # Player
 #
-#class Idle extends State:
+#class Idle extends PDAState:
 #	func enter(previous_state):
 #		_character.state_machine.stack = []
 #		_character.state_machine.stack.append(self)
@@ -65,7 +65,7 @@ class State:
 #		if _character.is_jumping():
 #			_character.state_machine.push(Jump.new(_character))
 #
-#class Move extends State:
+#class Move extends PDAState:
 #	var direction = Vector2.ZERO
 #
 #	func enter(previous_state):
@@ -93,7 +93,7 @@ class State:
 #		if _character.is_falling():
 #			_character.state_machine.push(Falling.new(_character))
 #
-#class Dash extends State:
+#class Dash extends PDAState:
 #	var dash_speed = 500 # Change as needed
 #	var dash_direction = Vector2.ZERO
 #	var dash_timer = 0.5 # Dash duration in seconds
@@ -120,7 +120,7 @@ class State:
 #			else:
 #				_character.state_machine.pop_and_push(Idle.new(_character))
 #
-#class Jump extends State:
+#class Jump extends PDAState:
 #	var jump_speed = -400 # Change as needed
 #
 #	func enter(previous_state):
@@ -148,7 +148,7 @@ class State:
 #		if _character.is_dashing():
 #			_character.state_machine.pop_and_push(Dash.new(_character))
 #
-#class Falling extends State:
+#class Falling extends PDAState:
 #	func enter(previous_state):
 #		_character.play_animation("Fall")
 #		if not _character.state_machine.stack.any(func(state): state is Jump):

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://3a6eckj2b11u"]
+
+[ext_resource type="PackedScene" uid="uid://jf6fjqqfa6wm" path="res://toolkit/nodes/state_chart/state_transition.tscn" id="1_a4pbr"]
+[ext_resource type="Script" path="res://toolkit/nodes/state_chart/animated_state_transition.gd" id="2_bfru4"]
+
+[node name="AnimatedStateTransition" instance=ExtResource("1_a4pbr")]
+script = ExtResource("2_bfru4")
+TargetAnimation = ""

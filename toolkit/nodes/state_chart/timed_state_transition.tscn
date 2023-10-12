@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjiskyggcaxtb"]
+
+[ext_resource type="PackedScene" uid="uid://jf6fjqqfa6wm" path="res://toolkit/nodes/state_chart/state_transition.tscn" id="1_hufsh"]
+[ext_resource type="Script" path="res://toolkit/nodes/state_chart/timed_state_transition.gd" id="2_o5k1b"]
+
+[node name="TimedStateTransition" instance=ExtResource("1_hufsh")]
+script = ExtResource("2_o5k1b")
+TimeToTransition = 0.0

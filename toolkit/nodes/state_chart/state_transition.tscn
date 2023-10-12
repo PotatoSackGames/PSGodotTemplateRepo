@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://jf6fjqqfa6wm"]
+
+[ext_resource type="Script" path="res://toolkit/nodes/state_chart/state_transition.gd" id="1_fp42d"]
+
+[node name="StateTransition" type="Node"]
+script = ExtResource("1_fp42d")
