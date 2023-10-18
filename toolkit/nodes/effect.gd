@@ -5,5 +5,7 @@ class_name Effect
 # The parent_node is the parent of the effect, in case you need access to that.
 # See how the special effects like squash and stretch function in the /effects folder.
 
+signal effect_completed
+
 func start_effect(parent_node) -> void:
 	pass

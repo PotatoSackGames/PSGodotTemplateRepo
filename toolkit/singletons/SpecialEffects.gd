@@ -7,6 +7,11 @@ extends Node
 
 static func add_temporary_effect_to(effect_scene, in_time : float, node) -> Effect:
 	var effect = effect_scene.instantiate()
+	return add_premade_temporary_effect_to(effect, in_time, node)
+
+# Adds an effect that is already created/preloaded
+
+static func add_premade_temporary_effect_to(effect, in_time : float, node) -> Effect:
 	var detachable = Detachable.new()
 	detachable.TimeToComplete = in_time # Would prefer to make this something awaitable. Still considering it.
 	assert(effect is Effect, "Effect_scene did not produce an effect type")
@@ -20,7 +25,7 @@ static func add_temporary_effect_to(effect_scene, in_time : float, node) -> Effe
 # Similar can be added to achieve a parallel set of effects if desired.
 static func add_temporary_multi_effect_to(effect_scenes : Array[PackedScene], in_times : Array[float], node) -> void:
 	var detachable = Detachable.new()
-	var serial_effect = preload("res://toolkit/nodes/effects/serial_effect.tscn").instantiate()
+	var serial_effect = preload("res://Toolkit/Nodes/effects/serial_effect.tscn").instantiate()
 	var total_time = 0.0
 	for i in effect_scenes.size():
 		total_time += in_times[i]
@@ -35,7 +40,7 @@ static func add_temporary_multi_effect_to(effect_scenes : Array[PackedScene], in
 # A multi-effect adds a set of effects that act in parallel, finishing after the time has elapsed.
 static func add_temporary_parallel_multi_effect_to(effect_scenes : Array[PackedScene], in_time, node) -> void:
 	var detachable = Detachable.new()
-	var parallel_effect = preload("res://toolkit/nodes/effects/parallel_effect.tscn").instantiate()
+	var parallel_effect = preload("res://Toolkit/Nodes/effects/parallel_effect.tscn").instantiate()
 	
 	for i in effect_scenes.size():
 		parallel_effect.add_effect(effect_scenes[i])

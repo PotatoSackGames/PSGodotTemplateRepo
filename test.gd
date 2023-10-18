@@ -20,7 +20,9 @@ func _on_run_effects_pressed() -> void:
 		
 		effects = [preload("res://toolkit/nodes/effects/round_hit.tscn"), preload("res://toolkit/nodes/effects/explosion.tscn"), preload("res://toolkit/nodes/effects/damage.tscn")]
 		await try_multiple_parallel_effects(effects, 1.0, $DamageCombo)
-		await try_effect(preload("res://toolkit/nodes/effects/hit_stop.tscn"), $HitStop, .71)
+		await try_effect(preload("res://toolkit/nodes/effects/hit_stop.tscn"), $HitStop, .91)
+		await try_effect(preload("res://toolkit/nodes/effects/shake.tscn"), $Shake, 1.0)
+		$ShakeableCamera.shake()
 		_is_running = false
 #	await get_tree().create_timer(5.0).timeout
 #	await Music.change_music(Music.EDMStream, 3.0)
