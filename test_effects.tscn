@@ -10,34 +10,35 @@
 script = ExtResource("1_n238o")
 
 [node name="Squash" type="Sprite2D" parent="."]
-position = Vector2(-41, 0)
+position = Vector2(-61, -19)
 texture = ExtResource("2_15fkj")
 
 [node name="Stretch" type="Sprite2D" parent="."]
+position = Vector2(-20, -19)
 texture = ExtResource("2_15fkj")
 
 [node name="SquashThenStretch" type="Sprite2D" parent="."]
-position = Vector2(41, 0)
+position = Vector2(21, -19)
 texture = ExtResource("2_15fkj")
 
 [node name="DamageEffect" type="Sprite2D" parent="."]
-position = Vector2(82, 0)
+position = Vector2(62, -19)
 texture = ExtResource("2_15fkj")
 
 [node name="RoundHit" type="Sprite2D" parent="."]
-position = Vector2(-41, 38)
+position = Vector2(-61, 19)
 texture = ExtResource("2_15fkj")
 
 [node name="DamageCombo" type="Sprite2D" parent="."]
-position = Vector2(-1, 38)
+position = Vector2(-21, 19)
 texture = ExtResource("2_15fkj")
 
 [node name="HitStop" type="Sprite2D" parent="."]
-position = Vector2(41, 38)
+position = Vector2(21, 19)
 texture = ExtResource("2_15fkj")
 
 [node name="Shake" type="Sprite2D" parent="."]
-position = Vector2(82, 38)
+position = Vector2(62, 19)
 texture = ExtResource("2_15fkj")
 
 [node name="ShakeableCamera" parent="." instance=ExtResource("3_vw4fv")]
