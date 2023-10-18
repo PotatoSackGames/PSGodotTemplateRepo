@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dplmxyggw407"]
+[gd_scene load_steps=6 format=3 uid="uid://dplmxyggw407"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_n238o"]
 [ext_resource type="Texture2D" uid="uid://k3rtu0q8oe06" path="res://test_sprite.png" id="2_15fkj"]
 [ext_resource type="PackedScene" uid="uid://rxuleixvd3ab" path="res://toolkit/nodes/ui/mouseover_control_sfx.tscn" id="3_f7ynm"]
+[ext_resource type="PackedScene" uid="uid://bx5o4j1oexylu" path="res://toolkit/nodes/ShakeableCamera.tscn" id="3_vw4fv"]
 [ext_resource type="AudioStream" uid="uid://b8w1ia8oenck1" path="res://rollover2.wav" id="4_ym2kw"]
 
 [node name="TestEffects" type="Node2D"]
@@ -35,7 +36,13 @@ texture = ExtResource("2_15fkj")
 position = Vector2(41, 38)
 texture = ExtResource("2_15fkj")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Shake" type="Sprite2D" parent="."]
+position = Vector2(82, 38)
+texture = ExtResource("2_15fkj")
+
+[node name="ShakeableCamera" parent="." instance=ExtResource("3_vw4fv")]
+ignore_rotation = false
+process_callback = 0
 
 [node name="ParticlesTest" type="Node2D" parent="."]
 position = Vector2(43, -55)
@@ -50,6 +57,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="RunEffects" type="Button" parent="CanvasLayer/Root"]
 layout_mode = 1
