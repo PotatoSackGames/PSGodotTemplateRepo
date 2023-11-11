@@ -16,7 +16,6 @@ func _get(property):
 	if _game_state.has(property):	
 		return _game_state[property]
 
-	assert(false, "Property " + property + " has not had set_item_state called on it initially")
 	return null
 	
 func _set(property, value):
