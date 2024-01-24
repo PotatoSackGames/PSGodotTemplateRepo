@@ -25,7 +25,7 @@ static func add_premade_temporary_effect_to(effect, in_time : float, node) -> Ef
 # Similar can be added to achieve a parallel set of effects if desired.
 static func add_temporary_multi_effect_to(effect_scenes : Array[PackedScene], in_times : Array[float], node) -> void:
 	var detachable = Detachable.new()
-	var serial_effect = preload("res://Toolkit/Nodes/effects/serial_effect.tscn").instantiate()
+	var serial_effect = preload("res://toolkit/nodes/effects/serial_effect.tscn").instantiate()
 	var total_time = 0.0
 	for i in effect_scenes.size():
 		total_time += in_times[i]
@@ -40,7 +40,7 @@ static func add_temporary_multi_effect_to(effect_scenes : Array[PackedScene], in
 # A multi-effect adds a set of effects that act in parallel, finishing after the time has elapsed.
 static func add_temporary_parallel_multi_effect_to(effect_scenes : Array[PackedScene], in_time, node) -> void:
 	var detachable = Detachable.new()
-	var parallel_effect = preload("res://Toolkit/Nodes/effects/parallel_effect.tscn").instantiate()
+	var parallel_effect = preload("res://toolkit/nodes/effects/parallel_effect.tscn").instantiate()
 	
 	for i in effect_scenes.size():
 		parallel_effect.add_effect(effect_scenes[i])
